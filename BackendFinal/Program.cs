@@ -1,7 +1,16 @@
-var builder = WebApplication.CreateBuilder(args);
+using BackendFinal;
+using BackendFinal.DAL;
+using Microsoft.EntityFrameworkCore;
 
+var builder = WebApplication.CreateBuilder(args);
+var _config = builder.Configuration;
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.ServiceRegister();
+builder.Services.AddDbContext<AppDbContext>(option =>
+{
+    option.UseSqlServer(_config.GetConnectionString("DefaultConnection"));
+});
 
 var app = builder.Build();
 
@@ -15,7 +24,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseSession();
 app.UseRouting();
 
 app.UseAuthorization();
