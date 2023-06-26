@@ -50,5 +50,44 @@ namespace BackendFinal.Areas.AdminArea.Controllers
 
 
         }
+        public IActionResult Delete(int? id)
+        {
+            if (id == null) return NotFound();
+            var banner = _appDbContext.Banners.FirstOrDefault(x => x.Id == id);
+            if (banner == null) return NotFound();
+
+            string path = Path.Combine(_webHostEnvironment.WebRootPath, "img", banner.ImgUrl);
+            DeleteHelper.DeleteFile(path);
+            _appDbContext.Banners.Remove(banner);
+            _appDbContext.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+        public IActionResult Update(int? id)
+        {
+            if (id == null) return NotFound();
+            var banner = _appDbContext.Banners.FirstOrDefault(x => x.Id == id);
+            if (banner == null) return NotFound();
+            BannerVM bannerVM = new BannerVM(); ////////////////////////////////////////////////////////////////////
+            return View(bannerVM);
+        }
+
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult Update(int? id, BannerVM bannerVM)
+        {
+            var banner = _appDbContext.Banners.FirstOrDefault(c => c.Id == id);
+            var exist = _appDbContext.Banners.Any(c => c.ImgUrl.ToLower() == bannerVM.Photo.FileName.ToLower() && c.Id != id);
+            if (!exist)
+            {
+                string path = Path.Combine(_webHostEnvironment.WebRootPath, "img", banner.ImgUrl);
+                DeleteHelper.DeleteFile(path);
+                banner.ImgUrl = bannerVM.Photo.FileName;
+            }
+
+            _appDbContext.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

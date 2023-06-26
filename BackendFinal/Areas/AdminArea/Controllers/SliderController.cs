@@ -75,6 +75,7 @@ namespace BackendFinal.Areas.AdminArea.Controllers
             if (slider == null) return NotFound();
             SliderVM sliderVM = new SliderVM()
             {
+                
                 Discount = slider.Discount,
                 Title = slider.Title,
                 Description = slider.Description
@@ -82,7 +83,6 @@ namespace BackendFinal.Areas.AdminArea.Controllers
             ViewBag.SliderImgUrl = slider.ImgUrl;
             return View(sliderVM);
         }
-
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
