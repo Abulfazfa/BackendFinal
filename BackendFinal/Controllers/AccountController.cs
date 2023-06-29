@@ -1,5 +1,6 @@
 ﻿using BackendFinal.Helper;
 using BackendFinal.Models;
+using BackendFinal.Services;
 using BackendFinal.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -11,12 +12,16 @@ namespace BackendFinal.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly FileService _fileService;
+        private readonly EmailService _emailService;
 
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager)
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager, FileService fileService, EmailService emailService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _fileService = fileService;
+            _emailService = emailService;
         }
 
         public IActionResult Register()
@@ -29,10 +34,12 @@ namespace BackendFinal.Controllers
         public async Task<IActionResult> Register(RegisterVM registerVM)
         {
             if (!ModelState.IsValid) return View();
+            string otp = GenerateOTP();
             AppUser appUser = new() { 
                 Fullname = registerVM.Fullname,
                 Email = registerVM.Email,
-                UserName = registerVM.Username
+                UserName = registerVM.Username,
+                OTP = otp
             };
 
             var result = await _userManager.CreateAsync(appUser, registerVM.Password);
@@ -47,7 +54,82 @@ namespace BackendFinal.Controllers
             }
 
             await _userManager.AddToRoleAsync(appUser, RoleEnum.User.ToString());
-            return RedirectToAction("Index", "Home");
+            string body = string.Empty;
+            string path = "wwwroot/assets/templates/verify.html";
+            string subject = "Verify Email";
+            body = _fileService.ReadFile(path, body);
+            body = body.Replace("{{Confirm Account}}", otp);
+            body = body.Replace("{{Welcome!}}", appUser.Fullname);
+            
+            _emailService.Send(appUser.Email, subject, body);
+            return RedirectToAction(nameof(VerifyEmail), new { Email = appUser.Email });
+        }
+        public IActionResult VerifyEmail(string email)
+        {
+            ConfirmAccountVM confirmAccountVM = new ConfirmAccountVM();
+            confirmAccountVM.Email = email;
+            return View(confirmAccountVM);
+        }
+
+        public async Task<IActionResult> ConfirmEmail(ConfirmAccountVM confirmAccountVM)
+        {
+            AppUser existUser = await _userManager.FindByEmailAsync(confirmAccountVM.Email);
+            if (existUser == null) return NotFound();
+            if (existUser.OTP != confirmAccountVM.OTP || string.IsNullOrEmpty(confirmAccountVM.OTP))
+            {
+                TempData["Error"] = "Wrong OTP";
+                RedirectToAction(nameof(VerifyEmail), new { Email = confirmAccountVM.Email });
+            }
+            string token = await _userManager.GenerateEmailConfirmationTokenAsync(existUser);
+            await _userManager.ConfirmEmailAsync(existUser, token);
+            await _signInManager.SignInAsync(existUser, isPersistent: false);
+            return RedirectToAction(nameof(Login));
+        }
+
+        public async Task<IActionResult> RecendOTP(string email)
+        {
+            string otp = GenerateOTP();
+            AppUser existUser = await _userManager.FindByEmailAsync(email);
+            existUser.OTP = otp;
+            await _userManager.UpdateAsync(existUser);
+
+            string body = string.Empty;
+            string path = "wwwroot/assets/templates/verify.html";
+            string subject = "Verify Email";
+            body = _fileService.ReadFile(path, body);
+            body = body.Replace("{{Confirm Account}}", otp);
+            body = body.Replace("{{Welcome!}}", existUser.Fullname);
+
+            _emailService.Send(existUser.Email, subject, body);
+            return RedirectToAction(nameof(VerifyEmail), new { Email = email });
+            
+        }
+
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> ChangePassword(ChangePasswordVM changePasswordVM)
+        {
+            if (!ModelState.IsValid) return View();
+            AppUser existUser = await _userManager.FindByNameAsync(User.Identity.Name);
+            IdentityResult result = await _userManager.ChangePasswordAsync(existUser, changePasswordVM.CurrentPassword, changePasswordVM.NewPassword);
+            if (result.Succeeded)
+            {
+                ViewBag.IsSuccess = true;
+                return View(changePasswordVM);
+            }
+            else
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+            }
+            return View(changePasswordVM);
         }
         public IActionResult Login()
         {
@@ -102,6 +184,13 @@ namespace BackendFinal.Controllers
                 await _roleManager.CreateAsync(new IdentityRole { Name = item.ToString() });
             }
             return Content("Roles added");
+        }
+
+        private static string GenerateOTP()
+        {
+            Random random = new();
+            int otpNumber = random.Next(1000, 9999);
+            return otpNumber.ToString();
         }
 
     }

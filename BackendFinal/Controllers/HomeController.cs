@@ -19,6 +19,7 @@ namespace BackendFinal.Controllers
             HomeVM homeVM = new HomeVM();
             homeVM.Sliders = _appDbContext.Sliders.ToList();
             homeVM.Banners = _appDbContext.Banners.ToList();
+            homeVM.Bios = _appDbContext.Bios.ToList();
             return View(homeVM);
         }
 

@@ -6,6 +6,7 @@ namespace BackendFinal.Models
     {
         public string Fullname { get; set; }
         public bool IsBlocked { get; set; }
+        public string OTP { get; set; }
         public string? ConnectionId { get; set; }
     }
 }

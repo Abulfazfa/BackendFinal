@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BackendFinal.Areas.AdminArea.Controllers
 {
+    [Area("AdminArea")]
     public class BannerController : Controller
     {
         private readonly AppDbContext _appDbContext;

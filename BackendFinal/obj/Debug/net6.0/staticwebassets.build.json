@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6ISCrTHk3QCK0fwC7bY8JOlA8KYpATpJk6ATKuHw+ko=",
+  "Hash": "5pBfxSU62vMHiV1Eym2cp4efvhakVMWDoO6DKdJWeRM=",
   "Source": "BackendFinal",
   "BasePath": "_content/BackendFinal",
   "Mode": "Default",
@@ -3281,6 +3281,57 @@
       "OriginalItemSpec": "wwwroot\\images\\0bffc58d-a431-407f-b8c6-35e2be48b12fslider-1.jpg"
     },
     {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\39d351d3-1e35-47de-9a3b-b6db390bc336banner-1.png",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/39d351d3-1e35-47de-9a3b-b6db390bc336banner-1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\39d351d3-1e35-47de-9a3b-b6db390bc336banner-1.png"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\3e092947-93c5-4cf7-b194-11f1a7cd4c4dbanner-2.png",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/3e092947-93c5-4cf7-b194-11f1a7cd4c4dbanner-2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\3e092947-93c5-4cf7-b194-11f1a7cd4c4dbanner-2.png"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\4ceff052-ff9a-47ca-b96d-90562473a506banner-1.png",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/4ceff052-ff9a-47ca-b96d-90562473a506banner-1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\4ceff052-ff9a-47ca-b96d-90562473a506banner-1.png"
+    },
+    {
       "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\6147701c-68c9-4a1a-b73a-bb5c9bdf2765slider-2.jpg",
       "SourceId": "BackendFinal",
       "SourceType": "Discovered",
@@ -5132,6 +5183,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\plugins\\js\\ajax-contact.js"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\template\\verify.html",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "template/verify.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\template\\verify.html"
     }
   ]
 }
