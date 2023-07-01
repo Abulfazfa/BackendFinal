@@ -6,6 +6,6 @@ namespace BackendFinal.ViewModels
     {
         public List<Slider> Sliders { get; set; }
         public List<Banner> Banners { get; set; }
-        public List<Bio> Bios { get; set; }
+        public Bio Bios { get; set; }
     }
 }

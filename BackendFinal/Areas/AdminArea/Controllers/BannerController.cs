@@ -69,7 +69,8 @@ namespace BackendFinal.Areas.AdminArea.Controllers
             if (id == null) return NotFound();
             var banner = _appDbContext.Banners.FirstOrDefault(x => x.Id == id);
             if (banner == null) return NotFound();
-            BannerVM bannerVM = new BannerVM(); ////////////////////////////////////////////////////////////////////
+            BannerVM bannerVM = new BannerVM();
+            bannerVM.ImgUrl = banner.ImgUrl;
             return View(bannerVM);
         }
 
@@ -79,12 +80,15 @@ namespace BackendFinal.Areas.AdminArea.Controllers
         public IActionResult Update(int? id, BannerVM bannerVM)
         {
             var banner = _appDbContext.Banners.FirstOrDefault(c => c.Id == id);
-            var exist = _appDbContext.Banners.Any(c => c.ImgUrl.ToLower() == bannerVM.Photo.FileName.ToLower() && c.Id != id);
-            if (!exist)
+            if (bannerVM.Photo != null)
             {
-                string path = Path.Combine(_webHostEnvironment.WebRootPath, "img", banner.ImgUrl);
-                DeleteHelper.DeleteFile(path);
-                banner.ImgUrl = bannerVM.Photo.FileName;
+                var exist = _appDbContext.Banners.Any(c => c.ImgUrl.ToLower() == bannerVM.Photo.FileName.ToLower() && c.Id != id);
+                if (!exist)
+                {
+                    string path = Path.Combine(_webHostEnvironment.WebRootPath, "img", banner.ImgUrl);
+                    DeleteHelper.DeleteFile(path);
+                    banner.ImgUrl = bannerVM.Photo.FileName;
+                }
             }
 
             _appDbContext.SaveChanges();

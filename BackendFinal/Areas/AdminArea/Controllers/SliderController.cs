@@ -75,7 +75,7 @@ namespace BackendFinal.Areas.AdminArea.Controllers
             if (slider == null) return NotFound();
             SliderVM sliderVM = new SliderVM()
             {
-                
+                ImageUrl = slider.ImgUrl,
                 Discount = slider.Discount,
                 Title = slider.Title,
                 Description = slider.Description
@@ -89,19 +89,24 @@ namespace BackendFinal.Areas.AdminArea.Controllers
         public IActionResult Update(int? id, SliderVM sliderVM)
         {
             var slider = _appDbContext.Sliders.FirstOrDefault(c => c.Id == id);
-            var exist = _appDbContext.Sliders.Any(c => c.ImgUrl.ToLower() == sliderVM.Photo.FileName.ToLower() && c.Id != id);
-            if (!exist)
+            if (sliderVM.Photo != null)
             {
-                string path = Path.Combine(_webHostEnvironment.WebRootPath, "img", slider.ImgUrl);
-                DeleteHelper.DeleteFile(path);
-                slider.ImgUrl = sliderVM.Photo.FileName;
-                slider.Discount = sliderVM.Discount;
-                slider.Title = sliderVM.Title;
-                slider.Description = sliderVM.Description;
+                var exist = _appDbContext.Sliders.Any(s => s.ImgUrl.ToLower() == sliderVM.Photo.FileName.ToLower() && s.Id != id);
+
+                if (!exist)
+                {
+                    string path = Path.Combine(_webHostEnvironment.WebRootPath, "img", slider.ImgUrl);
+                    DeleteHelper.DeleteFile(path);
+                    slider.ImgUrl = sliderVM.Photo.FileName;
+                }
             }
+
+            slider.Discount = sliderVM.Discount;
+            slider.Title = sliderVM.Title;
+            slider.Description = sliderVM.Description;
 
             _appDbContext.SaveChanges();
             return RedirectToAction("Index");
         }
-    } 
+    }
 }

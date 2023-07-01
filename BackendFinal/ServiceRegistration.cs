@@ -1,5 +1,6 @@
 ﻿using BackendFinal.DAL;
 using BackendFinal.Models;
+using BackendFinal.Services;
 using Microsoft.AspNetCore.Identity;
 
 namespace BackendFinal
@@ -30,6 +31,8 @@ namespace BackendFinal
 
             }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
             services.AddSignalR();
+            services.AddScoped<FileService>();
+            services.AddScoped<EmailService>();
         }
     }
 }

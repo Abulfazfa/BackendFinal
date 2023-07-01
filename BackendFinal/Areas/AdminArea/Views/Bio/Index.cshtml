@@ -12,6 +12,7 @@
 
 
                 <form method="post" class="forms-sample" enctype="multipart/form-data">
+                    <img width="300px" height="200px" src="~/images/@Model.ImgUrl" />
                     <div class="form-group">
                         <label asp-for="Photo"></label>
                         <input class="form-control" asp-for="Photo">
@@ -37,8 +38,17 @@
                         <input class="form-control" asp-for="WorkingTime">
                         <span asp-validation-for="WorkingTime"></span>
                     </div>
-
-
+                    <div class="form-group">
+                        <label asp-for="GeneralInformation"></label>
+                        <input class="form-control" asp-for="GeneralInformation">
+                        <span asp-validation-for="GeneralInformation"></span>
+                    </div>
+                    <img width="200px" height="120px" src="~/images/@Model.AboutImgUrl" />
+                    <div class="form-group">
+                        <label asp-for="AboutPhoto"></label>
+                        <input class="form-control" asp-for="AboutPhoto">
+                        <span asp-validation-for="AboutPhoto"></span>
+                    </div>
 
 
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>

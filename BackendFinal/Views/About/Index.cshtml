@@ -1,0 +1,38 @@
+﻿@using BackendFinal.ViewModels
+@model AboutVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="about-page pt-20">
+    <div class="container-fluid custom-container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-image mt-30">
+                    <img src="~/images/@Model.Photo" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-content mt-30">
+                    <h2 class="title">Welcome to Allup</h2>
+                    <p>@Model.GeneralInformation</p>
+                </div>
+            </div>
+        </div> <!-- row -->
+        <div class="about-items pt-20">
+            <div class="row">
+                @foreach (var item in Model.Sections)
+                {
+                    <div class="col-lg-4">
+                    <div class="about-item mt-30">
+                        <h4 class="title">@item.Title</h4>
+                        <p>@item.Description</p>
+                    </div> <!-- about item -->
+                    </div>
+                }
+                
+            </div> <!-- row -->
+        </div>  <!-- about items -->
+    </div> <!-- container -->
+</section>

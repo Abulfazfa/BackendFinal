@@ -1,9 +1,15 @@
-﻿namespace BackendFinal.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BackendFinal.Models
 {
     public class Category : BaseEntity
-    {
-        public string ImgUrl { get; set; }
+    {      
+        [Required]
         public string Name { get; set; }
-        public List<Product> Products { get; set; }
+        public bool IsMain { get; set; }
+        public Nullable<int> ParentId { get; set; }
+        public Category Parent { get; set; }
+        public IEnumerable<Category> Children { get; set; }
+
     }
 }

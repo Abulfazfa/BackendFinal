@@ -1,0 +1,46 @@
+﻿@model List<AboutSection>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">About Table</h4>
+                <a class="btn btn-success" asp-controller="adminabout" asp-action="create">Add Section</a>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Desc</th>
+                                <th>Settings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>@item.Title</td>
+                                    <td>@item.Description</td>
+
+                                    <td>
+                                        <a class="btn btn-secondary" asp-controller="adminabout" asp-action="detail" asp-route-id="@item.Id">Detail</a>
+                                        <a class="btn btn-primary" asp-controller="adminabout" asp-action="update" asp-route-id="@item.Id">Update</a>
+                                        <a class="btn btn-danger" asp-controller="adminabout" asp-action="delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

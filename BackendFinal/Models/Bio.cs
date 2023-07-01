@@ -11,6 +11,10 @@ namespace BackendFinal.Models
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public string WorkingTime { get; set; }
+        public string GeneralInformation { get; set; }
+        public string AboutImgUrl { get; set; }
+       
+
 
     }
 }

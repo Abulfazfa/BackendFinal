@@ -402,15 +402,15 @@
                         <div class="col-lg-9 position-static">
                             <div class="header-horizontal-menu">
                                 <ul class="menu-content">
-                                    <li class="active"><a href="#">Home <i class="fal fa-chevron-down"></i></a>
+                                    <li class="active"><a asp-controller="home">Home <i class="fal fa-chevron-down"></i></a>
                                         <ul class="sub-menu">
-                                            <li><a href="index.html">Home 01</a></li>
+                                            @*<li><a href="index.html">Home 01</a></li>
                                             <li><a href="index-2.html">Home 02</a></li>
                                             <li><a href="index-3.html">Home 03</a></li>
-                                            <li><a href="index-4.html">Home 04</a></li>
+                                            <li><a href="index-4.html">Home 04</a></li>*@
                                         </ul>
                                     </li>
-                                    <li><a href="about.html">About</a></li>
+                                    <li><a asp-controller="about">About</a></li>
                                     <li><a href="#">Pages <i class="fal fa-chevron-down"></i></a>
                                         <ul class="sub-menu">
                                             <li><a href="about.html">About</a></li>
@@ -498,7 +498,7 @@
                                             </li>
                                         </ul> <!--  mega sub menu -->
                                     </li>
-                                    <li><a href="#">Blog <i class="fal fa-chevron-down"></i></a>
+                                    <li><a asp-controller="blog">Blog <i class="fal fa-chevron-down"></i></a>
                                         <ul class="sub-menu">
                                             <li><a href="#">Blog Grid <i class="fal fa-chevron-right"></i></a>
                                                 <ul class="sub-menu">
@@ -1093,7 +1093,12 @@
 
     <!--====== Features Banner Part Ends ======-->
 
-    <!--====== Blog Part Start ======-->
+    
+
+    <!--====== Newsletter Part Start ======-->
+    @if (Context.Request.Path == "/Home")
+    {
+        <!--====== Blog Part Start ======-->
 
     <section class="blog-area blog-bg pt-100 pb-100">
         <div class="container">
@@ -1208,8 +1213,7 @@
     </section>
 
     <!--====== Testimonial Part Ends ======-->
-
-    <!--====== Newsletter Part Start ======-->
+    }
 
     <section class="newsletter-area pt-100 pb-100 bg_cover" style="background-image: url(images/bg-newletter.jpg)">
         <div class="container">

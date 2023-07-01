@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5pBfxSU62vMHiV1Eym2cp4efvhakVMWDoO6DKdJWeRM=",
+  "Hash": "3uleT244HEyVOiwGlHSCdtJlT/X5yV/1XrOYsV8k8EM=",
   "Source": "BackendFinal",
   "BasePath": "_content/BackendFinal",
   "Mode": "Default",
@@ -3281,6 +3281,23 @@
       "OriginalItemSpec": "wwwroot\\images\\0bffc58d-a431-407f-b8c6-35e2be48b12fslider-1.jpg"
     },
     {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\0ef52460-2f06-4d6d-a2c4-171e6072b7dcauthor-1.png",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/0ef52460-2f06-4d6d-a2c4-171e6072b7dcauthor-1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\0ef52460-2f06-4d6d-a2c4-171e6072b7dcauthor-1.png"
+    },
+    {
       "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\39d351d3-1e35-47de-9a3b-b6db390bc336banner-1.png",
       "SourceId": "BackendFinal",
       "SourceType": "Discovered",
@@ -4180,6 +4197,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\custom_banner.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\e20041a4-f0dd-4a17-9d47-3879c27edd11author-1.png",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/e20041a4-f0dd-4a17-9d47-3879c27edd11author-1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\e20041a4-f0dd-4a17-9d47-3879c27edd11author-1.png"
     },
     {
       "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\favicon.png",
@@ -5183,6 +5217,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\plugins\\js\\ajax-contact.js"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\template\\ForgotPassword.html",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "template/ForgotPassword.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\template\\ForgotPassword.html"
     },
     {
       "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\template\\verify.html",

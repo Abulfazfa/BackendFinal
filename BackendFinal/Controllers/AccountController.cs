@@ -4,6 +4,7 @@ using BackendFinal.Services;
 using BackendFinal.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using static System.Net.WebRequestMethods;
 
 namespace BackendFinal.Controllers
 {
@@ -130,6 +131,59 @@ namespace BackendFinal.Controllers
                 }
             }
             return View(changePasswordVM);
+        }
+
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> ForgotPassword(ForgetPasswordVM forgetPasswordVM)
+        {
+           if(!ModelState.IsValid) return View(forgetPasswordVM);
+           AppUser existUser = await _userManager.FindByEmailAsync(forgetPasswordVM.Email);
+            if (existUser == null)
+            {
+                ModelState.AddModelError("Email", "User not found ");
+                return View(forgetPasswordVM);
+            }
+            string token = await _userManager.GeneratePasswordResetTokenAsync(existUser);
+            string link = Url.Action(nameof(ResetPassword), "Account", new { userId = existUser.Id, token}, Request.Scheme, Request.Host.ToString());
+            string body = string.Empty;
+            string path = "wwwroot/assets/templates/ForgotPassword.html";
+            string subject = "Verify Email";
+            body = _fileService.ReadFile(path, body);
+            body = body.Replace("{{link}}", link);
+            body = body.Replace("{{Welcome!}}", existUser.Fullname);
+
+            _emailService.Send(existUser.Email, subject, body);
+            return RedirectToAction(nameof(ResetPasswordVerifyEmail));
+        }
+        public IActionResult ResetPasswordVerifyEmail()
+        {
+            return View();
+        }
+        public IActionResult ResetPassword(string userId, string token)
+        {
+            return View(new ResetPasswordVM { Token = token, UserId = userId});
+        }
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordVM resetPasswordVM)
+        {
+            if(!ModelState.IsValid) return View(resetPasswordVM);
+            AppUser existUser = await _userManager.FindByIdAsync(resetPasswordVM.UserId);
+            if (existUser == null) return NotFound();
+
+            if(await _userManager.CheckPasswordAsync(existUser, resetPasswordVM.Password))
+            {
+                ModelState.AddModelError("", "This password already");
+                return View(resetPasswordVM);
+            }
+            await _userManager.ResetPasswordAsync(existUser, resetPasswordVM.Token, resetPasswordVM.Password);
+            return RedirectToAction(nameof(Login));
+            
         }
         public IActionResult Login()
         {

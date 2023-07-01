@@ -13,5 +13,7 @@ namespace BackendFinal.DAL
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Banner> Banners { get; set; }
         public DbSet<Bio> Bios { get; set; }
+        public DbSet<AboutSection> AboutSections { get; set; }
+
     }
 }
