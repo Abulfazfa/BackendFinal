@@ -117,13 +117,17 @@ button {
             to your mobile number
         </p>
         <div id='inputs'>
-            <input id='input1' type='text' maxLength="1" />
-            <input id='input2' type='text' maxLength="1" />
-            <input id='input3' type='text' maxLength="1" />
-            <input id='input4' type='text' maxLength="1" />
+            <form asp-action="ConfirmEmail" method="post">
+                <input asp-for="OTP"/>
+                <input asp-for="Email" value="@Model.Email" style="visibility: hidden;"/>
+                <button type="submit">Submit</button>
+                <a asp-action="RecendOTP" asp-route-email="@Model.Email">Resend OTP</a>
+            </form>
+      
+        
+
         </div>
-        <button>Submit</button>
-        <a asp-action="RecendOTP" asp-route-email="@Model.Email">Resend OTP</a>
+       
     </section>
 </body>
 <script>

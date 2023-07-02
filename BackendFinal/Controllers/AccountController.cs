@@ -36,7 +36,8 @@ namespace BackendFinal.Controllers
         {
             if (!ModelState.IsValid) return View();
             string otp = GenerateOTP();
-            AppUser appUser = new() { 
+            AppUser appUser = new()
+            {
                 Fullname = registerVM.Fullname,
                 Email = registerVM.Email,
                 UserName = registerVM.Username,
@@ -54,16 +55,17 @@ namespace BackendFinal.Controllers
                 return View(registerVM);
             }
 
-            await _userManager.AddToRoleAsync(appUser, RoleEnum.User.ToString());
+            //await _userManager.AddToRoleAsync(appUser, RoleEnum.User.ToString());
             string body = string.Empty;
-            string path = "wwwroot/assets/templates/verify.html";
+            string path = "wwwroot/template/verify.html";
             string subject = "Verify Email";
             body = _fileService.ReadFile(path, body);
             body = body.Replace("{{Confirm Account}}", otp);
             body = body.Replace("{{Welcome!}}", appUser.Fullname);
-            
+
             _emailService.Send(appUser.Email, subject, body);
             return RedirectToAction(nameof(VerifyEmail), new { Email = appUser.Email });
+
         }
         public IActionResult VerifyEmail(string email)
         {
@@ -151,7 +153,7 @@ namespace BackendFinal.Controllers
             string token = await _userManager.GeneratePasswordResetTokenAsync(existUser);
             string link = Url.Action(nameof(ResetPassword), "Account", new { userId = existUser.Id, token}, Request.Scheme, Request.Host.ToString());
             string body = string.Empty;
-            string path = "wwwroot/assets/templates/ForgotPassword.html";
+            string path = "wwwroot/template/ForgotPassword.html";
             string subject = "Verify Email";
             body = _fileService.ReadFile(path, body);
             body = body.Replace("{{link}}", link);
