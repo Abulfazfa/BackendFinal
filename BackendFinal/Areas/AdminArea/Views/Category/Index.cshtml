@@ -9,7 +9,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Role Table</h4>
-                <a class="btn btn-success" asp-controller="role" asp-action="create">Add Role</a>
+                <a class="btn btn-success" asp-controller="category" asp-action="create">Add Category</a>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -23,7 +23,7 @@
                             @foreach (var category in Model)
                             {
                                 <tr>
-                                    <td>@item.Name</td>
+                                    <td>@category.Name</td>
                                     <td>
                                         @foreach (var child in category.Children)
                                         {
@@ -32,9 +32,9 @@
                                     </td>
                                     
                                     <td>
-                                       @* <a class="btn btn-secondary" asp-controller="category" asp-action="detail" asp-route-id="@item.Id">Detail</a>*@
-                                        <a class="btn btn-primary" asp-controller="category" asp-action="update" asp-route-id="@item.Id">Update</a>
-                                        <a class="btn btn-danger" asp-controller="category" asp-action="delete" asp-route-id="@item.Id">Delete</a>
+                                       @* <a class="btn btn-secondary" asp-controller="category" asp-action="detail" asp-route-id="@category.Id">Detail</a>*@
+                                        <a class="btn btn-primary" asp-controller="category" asp-action="update" asp-route-id="@category.Id">Update</a>
+                                        <a class="btn btn-danger" asp-controller="category" asp-action="delete" asp-route-id="@category.Id">Delete</a>
                                     </td>
                                 </tr>
                             }

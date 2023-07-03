@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BackendFinal.Areas.AdminArea.Controllers
 {
+    [Area("AdminArea")]
     public class CategoryController : Controller
     {
         private readonly AppDbContext _appDbContext;
@@ -18,7 +19,14 @@ namespace BackendFinal.Areas.AdminArea.Controllers
         }
         public IActionResult Create()
         {
-            return View(_appDbContext.Categories.ToList());
+            ViewBag.Categories = _appDbContext.Categories.ToList();
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Category category)
+        {
+            if (!ModelState.IsValid) return View();
+            return View();
         }
     }
 }
