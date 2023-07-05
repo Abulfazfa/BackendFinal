@@ -2,11 +2,14 @@
 using BackendFinal.Helper;
 using BackendFinal.Models;
 using BackendFinal.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace BackendFinal.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "Admin")]
     public class BannerController : Controller
     {
         private readonly AppDbContext _appDbContext;

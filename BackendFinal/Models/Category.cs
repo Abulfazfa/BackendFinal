@@ -8,8 +8,13 @@ namespace BackendFinal.Models
         public string Name { get; set; }
         public bool IsMain { get; set; }
         public Nullable<int> ParentId { get; set; }
-        public Category Parent { get; set; }
-        public IEnumerable<Category> Children { get; set; }
+        public Category? Parent { get; set; }
+        public IEnumerable<Category>? Children { get; set; }
+
+        public Category()
+        {
+            IsDeleted = false;
+        }
 
     }
 }

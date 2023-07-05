@@ -25,10 +25,14 @@
                                 <tr>
                                     <td>@category.Name</td>
                                     <td>
-                                        @foreach (var child in category.Children)
+                                        @if (category.Children != null)
                                         {
-                                            <p>@child.Name</p>
+                                            @foreach (var child in category.Children)
+                                            {
+                                                <p>@child.Name</p>
+                                            }
                                         }
+                                        
                                     </td>
                                     
                                     <td>

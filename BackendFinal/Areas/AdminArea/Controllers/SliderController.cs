@@ -2,12 +2,15 @@
 using BackendFinal.Helper;
 using BackendFinal.Models;
 using BackendFinal.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.IO;
 
 namespace BackendFinal.Areas.AdminArea.Controllers
 {
     [Area("adminarea")]
+    [Authorize(Roles = "Admin")]
     public class SliderController : Controller
     {
         private readonly AppDbContext _appDbContext;

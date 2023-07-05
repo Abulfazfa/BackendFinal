@@ -1,10 +1,13 @@
 ﻿using BackendFinal.DAL;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Data;
 
 namespace BackendFinal.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "Admin")]
     public class UserMessageController : Controller
     {
         private readonly AppDbContext _appDbContext;

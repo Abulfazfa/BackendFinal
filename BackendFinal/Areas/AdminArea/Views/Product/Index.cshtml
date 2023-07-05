@@ -1,0 +1,49 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Product Table</h4>
+                <a class="btn btn-success" asp-controller="product" asp-action="create">Add Category</a>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Count</th>
+
+                                <th>Settings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="~/img/@(item.Images.Where(i => i.IsMain == true).FirstOrDefault())" width="250" height="250" />
+                                    </td>
+                                    <td>@item.Name</td>
+                                    <td>@item.ProductCount</td>
+                                    <td>
+                                        <a class="btn btn-secondary" asp-controller="product" asp-action="detail" asp-route-id="@item.Id">Detail</a>
+                                        <a class="btn btn-primary" asp-controller="product" asp-action="update" asp-route-id="@item.Id">Update</a>
+                                        <a class="btn btn-danger" asp-controller="product" asp-action="delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
