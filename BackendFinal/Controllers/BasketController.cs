@@ -1,7 +1,10 @@
 ﻿using BackendFinal.DAL;
+using BackendFinal.Hubs;
 using BackendFinal.Models;
 using BackendFinal.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
@@ -10,8 +13,7 @@ namespace BackendFinal.Controllers
     public class BasketController : Controller
     {
         private readonly AppDbContext _appDbContext;
-          
-        public BasketController(AppDbContext appDbContext)
+        public BasketController(UserManager<AppUser> userManager, IHubContext<CommerceHub> hubContext, AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
         }
@@ -90,7 +92,11 @@ namespace BackendFinal.Controllers
             }
 
 
-            return View();
+            return View(products);
         }
+        
+        
     }
 }
+
+ 

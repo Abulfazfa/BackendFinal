@@ -1,0 +1,57 @@
+﻿@using BackendFinal.ViewModels
+@model List<BasketVM>
+@*<div class="container">
+    <ul class="list-group">
+        @foreach (var item in ViewBag.Users)
+        {
+            <li class="list-group-item">  <span id="@item.Id" class="@(item.ConnectionId != null? "bg-on" : "bg-off")">0</span>@item.FullName</li>
+        }
+    </ul>
+</div>*@
+<div class="container">
+    <div class="row p-1">
+        <div class="col-1">User</div>
+        <div class="col-5"><input type="text" id="userInput" value="ali" style="display:none;" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-1">Message</div>
+        <div class="col-5"><input type="text" class="w-100" id="messageInput" value="@ViewBag.ProductList" style="display:none;" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6 text-end">
+            <input type="button" id="sendButton" value="Send Message" />
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.7/signalr.min.js" integrity="sha512-w8K//0QrLkzgScjZIiDUHnxcDoKGGqy/OLa3X0PuRA6ZlZnwUCgaM26ro3ZFZ0AGElA+0SThNpsXNx2sCm5VuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var connection = new signalR.HubConnectionBuilder().withUrl("/commerce").build();
+    connection.start();
+    console.log(connection);
+
+    document.getElementById("sendButton").addEventListener("click", function (event) {
+    var user = document.getElementById("userInput").value;
+    var product = document.getElementById("messageInput").value;
+    connection.invoke("SendMessage", user, product);
+
+    });
+    connection.on("ReceiveMessage", function (user, product) {
+    var li = document.createElement("li");
+    document.getElementById("messagesList").appendChild(li);
+    li.textContent = `${user} says ${product.Name}`;
+    });
+    connection.on("userConnect", function(userId){
+        document.getElementById(userId).classList.remove("bg-off");
+        document.getElementById(userId).classList.add("bg-on");
+    });
+     connection.on("userDisconnect", function(userId){
+        document.getElementById(userId).classList.remove("bg-on");
+        document.getElementById(userId).classList.add("bg-off");
+    });
+     connection.on("ShowAlert", function(fullName){
+       alert("message from " + fullName);
+    });
+</script>

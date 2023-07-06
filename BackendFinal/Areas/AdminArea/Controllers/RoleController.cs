@@ -58,7 +58,6 @@ namespace BackendFinal.Areas.AdminArea.Controllers
                 UserRoles = userRoles
             });
 
-
         }
 
         [HttpPost]

@@ -10,8 +10,8 @@ namespace BackendFinal.ViewModels
         public string Desc { get; set; }
         public string Brand { get; set; }
         public int ProductCount { get; set; }
-        public Category Category { get; set; }
-        public List<ProductImage> Images { get; set; }
+        public int CategoryId { get; set; }
+        public List<ProductImage>? Images { get; set; }
         public List<IFormFile> Photos { get; set; }
 
 

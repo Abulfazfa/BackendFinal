@@ -75,6 +75,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFByb2R1Y3RcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/HP/source/repos/BackendFinal/BackendFinal/Areas/AdminArea/Views/Role/ChangeRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFJvbGVcQ2hhbmdlUm9sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/HP/source/repos/BackendFinal/BackendFinal/Areas/AdminArea/Views/Role/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFJvbGVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -109,6 +113,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/HP/source/repos/BackendFinal/BackendFinal/Areas/AdminArea/Views/UserMessage/SeenMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFVzZXJNZXNzYWdlXFNlZW5NZXNzYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/BackendFinal/BackendFinal/Areas/AdminArea/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5BcmVhXFZpZXdzXFVzZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/HP/source/repos/BackendFinal/BackendFinal/Areas/AdminArea/Views/_ViewImports.cshtml]
@@ -149,6 +157,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/HP/source/repos/BackendFinal/BackendFinal/Views/Basket/ShowBasket.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0XFNob3dCYXNrZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/source/repos/BackendFinal/BackendFinal/Views/Commerce/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVyY2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/HP/source/repos/BackendFinal/BackendFinal/Views/Contact/Index.cshtml]

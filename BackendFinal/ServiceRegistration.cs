@@ -33,6 +33,7 @@ namespace BackendFinal
             services.AddSignalR();
             services.AddScoped<FileService>();
             services.AddScoped<EmailService>();
+            services.AddScoped<PaginationService>();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿
+﻿@using BackendFinal.ViewModels
+@model List<BasketVM>
 @{
     ViewData["Title"] = "ShowBasket";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,7 +10,7 @@
     <ul class="cart-items">
         @foreach (var item in Model)
         {
-            totalPrice *= item.BasketCount * item.BasketCount;
+            @(totalPrice *= item.BasketCount * item.Price)
             <li>
                 <div class="single-cart-item d-flex">
                     <div class="cart-item-thumb">
@@ -49,6 +50,6 @@
         </div>
     </div> <!-- price content -->
     <div class="checkout text-center">
-        <a href="checkout.html" class="main-btn">Checkout</a>
+        <a asp-controller="commerce" asp-route-product="@Model" class="main-btn">Checkout</a>
     </div>
 </div>
