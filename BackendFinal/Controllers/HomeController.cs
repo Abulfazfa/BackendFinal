@@ -2,6 +2,7 @@
 using BackendFinal.Models;
 using BackendFinal.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace BackendFinal.Controllers
@@ -22,7 +23,15 @@ namespace BackendFinal.Controllers
             homeVM.Bios = _appDbContext.Bios.FirstOrDefault();
             return View(homeVM);
         }
+        public IActionResult Search(string search)
+        {
+            var products = _appDbContext.Products.Include(p => p.Images).Include(p => p.Category)
+                .Where(p => p.Name.ToLower().Contains(search.ToLower()))
+                .Take(3)
+                .OrderByDescending(p => p.Id)
+                .ToList();
+            return PartialView("_SearchPartial", products);
+        }
 
-       
     }
 }

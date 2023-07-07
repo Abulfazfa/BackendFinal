@@ -48,7 +48,7 @@
 <div class="row">
     <nav aria-label="...">
         <ul class="pagination pagination-lg">
-            @for (int i = 1; i < Model.PageCount; i++)
+            @for (int i = 1; i <= Model.PageCount; i++)
             {
                 <li class="page-item @(Model.CurrentPage == i?"active": "")">
                     <a asp-action="index" asp-route-page="@i">

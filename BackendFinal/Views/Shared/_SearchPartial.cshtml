@@ -7,9 +7,8 @@
     {
         <a target="_self" asp-controller="product" asp-action="detail" asp-route-id="@item.Id">
             <li>
-                <div class="sgm-search-product-image"> <img src="~/images/@(item.Images.Where(i => i.IsMain == true))"> </div>
+                <div class="sgm-search-product-image"> <img src="~/images/@(item.Images.FirstOrDefault().ImgUrl)" width="100" height="50" /> </div>
                 <div class="sgm-search-product-info">
-                    <div class="sgm-search-product-info-category"> </div>
                     <div class="sgm-search-product-info-name">@item.Name</div>
                     <span class="sgm-search-product-info-price">@item.Price</span>
                 </div>

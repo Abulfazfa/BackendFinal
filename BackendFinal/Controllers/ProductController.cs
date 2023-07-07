@@ -16,14 +16,6 @@ namespace BackendFinal.Controllers
         {
             return View(_appDbContext.Products.Include(p => p.Images));
         }
-        public IActionResult Search(string search)
-        {
-            var products = _appDbContext.Products
-                .Where(p => p.Name.ToLower().Contains(search.ToLower()))
-                .Take(3)
-                .OrderByDescending(p => p.Id)
-                .ToList();
-            return PartialView("_SearchPartial", products);
-        }
+        
     }
 }

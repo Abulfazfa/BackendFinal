@@ -130,7 +130,8 @@
                                 </div>
                                 <div class="header-search media-body">
                                     <form action="#">
-                                        <div class="search-category">
+
+                                                <div class="search-category">
                                             <select>
                                                 <option value="0">All categories</option>
                                                 <option value="12">Laptop</option>
@@ -236,10 +237,16 @@
                                                 <option value="112">Games &amp; Consoles</option>
                                             </select>
                                         </div>
-                                        <input type="text" placeholder="Enter your search key ... ">
-                                        <button><i class="icon ion-android-search"></i></button>
+
+                                                <input type="text" placeholder="Enter your search key ... " id="input-search">
+                                                <button><i class="icon ion-android-search"></i></button>
+
                                     </form>
+                                    <ul class="sub-menu" id="searchList">
+
+                                    </ul>
                                 </div>
+
                                 <div class="header-cart">
                                     <div class="cart-btn">
                                         <a asp-controller="basket" asp-action="showbasket">

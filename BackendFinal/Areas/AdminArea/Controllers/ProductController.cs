@@ -33,6 +33,7 @@ namespace BackendFinal.Areas.AdminArea.Controllers
             var products = query
                 .Include(p => p.Images)
                 .Include(p => p.Category)
+                .Skip(take * (page - 1))
                 .Take(take)
                 .ToList();
             var productCount = query.Count();
