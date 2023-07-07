@@ -91,7 +91,7 @@ namespace BackendFinal.Areas.AdminArea.Controllers
                 image.ImgUrl = item.SaveImage(_webHostEnvironment, "images");
                 images.Add(image);
             }
-            //images.FirstOrDefault().IsMain = true;
+            images.FirstOrDefault().IsMain = true;
             product.Images = images;
 
             _appDbContext.Products.Add(product);
@@ -163,7 +163,7 @@ namespace BackendFinal.Areas.AdminArea.Controllers
                         image.ImgUrl = item.SaveImage(_webHostEnvironment, "images");
                         images.Add(image);
                     }
-                    //images.FirstOrDefault().IsMain = true;
+                    images.FirstOrDefault().IsMain = true;
                     product.Images = images;
 
                 }

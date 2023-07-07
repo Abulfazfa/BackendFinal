@@ -21,6 +21,7 @@ namespace BackendFinal.Controllers
             homeVM.Sliders = _appDbContext.Sliders.ToList();
             homeVM.Banners = _appDbContext.Banners.ToList();
             homeVM.Bios = _appDbContext.Bios.FirstOrDefault();
+            homeVM.Products = _appDbContext.Products.Include(p => p.Images).Include(p => p.Category).ToList();
             return View(homeVM);
         }
         public IActionResult Search(string search)

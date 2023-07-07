@@ -68,32 +68,32 @@ namespace BackendFinal.Controllers
             var existproduct = products.Find(x => x.Id == id);
             products.Remove(existproduct);
             Response.Cookies.Append("basket", JsonConvert.SerializeObject(products), new CookieOptions { MaxAge = TimeSpan.FromMinutes(15) });
-            return RedirectToAction("ShowBasket");
+            return RedirectToAction("Index", "Home");
         }
-        public IActionResult ShowBasket()
-        {
+        //public IActionResult ShowBasket()
+        //{
 
-            string basket = Request.Cookies["basket"];
-            List<BasketVM> products;
-            if (basket == null)
-            {
-                products = new List<BasketVM>(); 
-            }
-            else
-            {
-                products = JsonConvert.DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);
-                foreach (var item in products)
-                {
-                    Product existproduct = _appDbContext.Products.Include(p => p.Images).FirstOrDefault(p => p.Id == item.Id);
-                    item.Name = existproduct.Name;
-                    item.Price = existproduct.Price;
-                    item.ImgUrl = existproduct.Images.FirstOrDefault().ImgUrl;
-                }
-            }
+        //    string basket = Request.Cookies["basket"];
+        //    List<BasketVM> products;
+        //    if (basket == null)
+        //    {
+        //        products = new List<BasketVM>(); 
+        //    }
+        //    else
+        //    {
+        //        products = JsonConvert.DeserializeObject<List<BasketVM>>(Request.Cookies["basket"]);
+        //        foreach (var item in products)
+        //        {
+        //            Product existproduct = _appDbContext.Products.Include(p => p.Images).FirstOrDefault(p => p.Id == item.Id);
+        //            item.Name = existproduct.Name;
+        //            item.Price = existproduct.Price;
+        //            item.ImgUrl = existproduct.Images.FirstOrDefault().ImgUrl;
+        //        }
+        //    }
 
 
-            return View(products);
-        }
+        //    return View(products);
+        //}
         
         
     }

@@ -1,0 +1,40 @@
+﻿@using BackendFinal.ViewModels
+@model List<BasketVM>
+@{
+    double totalPrice = 0;
+}
+
+<div class="mini-cart">
+
+    <ul class="cart-items">
+        @foreach (var item in Model)
+        {
+            totalPrice += (item.BasketCount * item.Price);
+            <li>
+                <div class="single-cart-item d-flex">
+                    <div class="cart-item-thumb">
+                        <a href="single-product.html"><img src="~/images/@item.ImgUrl" alt="product" width="200" height="100"></a>
+                        <span class="product-quantity">@(item.BasketCount)x</span>
+                    </div>
+                    <div class="cart-item-content media-body">
+                        <h5 class="product-name"><a href="single-product.html">@item.Name</a></h5>
+                        <span class="product-price">€@item.Price</span>
+                        <a asp-action="RemoveItem" asp-controller="basket" asp-route-id="@item.Id" class="product-close"><i class="fal fa-times"></i></a>
+                    </div>
+                </div>
+            </li>
+        }
+
+
+    </ul>
+    <div class="price_content">
+
+        <div class="cart-total price_inline">
+            <span class="label">Total</span>
+            <span class="value">€@totalPrice</span>
+        </div>
+    </div> <!-- price content -->
+    <div class="checkout text-center">
+        <a asp-controller="commerce" asp-route-product="@Model" class="main-btn">Checkout</a>
+    </div>
+</div>
