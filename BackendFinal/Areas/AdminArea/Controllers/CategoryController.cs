@@ -1,4 +1,5 @@
 ﻿using BackendFinal.DAL;
+using BackendFinal.Helper;
 using BackendFinal.Models;
 using BackendFinal.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 
 namespace BackendFinal.Areas.AdminArea.Controllers
 {
@@ -15,9 +17,11 @@ namespace BackendFinal.Areas.AdminArea.Controllers
     public class CategoryController : Controller
     {
         private readonly AppDbContext _appDbContext;
-        public CategoryController(AppDbContext appDbContext)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public CategoryController(AppDbContext appDbContext, IWebHostEnvironment webHostEnvironment)
         {
             _appDbContext = appDbContext;
+            _webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Index()
         {
@@ -33,12 +37,25 @@ namespace BackendFinal.Areas.AdminArea.Controllers
         {
             ViewBag.Categories = new SelectList(_appDbContext.Categories.ToList(), "Id", "Name");
             if (!ModelState.IsValid) return View();
+            if (categoryVM.Photo != null)
+            {           
+                if (!categoryVM.Photo.CheckFileType())
+                {
+                    ModelState.AddModelError("Photo", "Sellect a image");
+                    return View();
+
+                }
+            }
             Category category = new()
             {
                 Name = categoryVM.Name,
                 IsMain = categoryVM.IsMain,
                 ParentId = categoryVM.ParentId,
             };
+            if (categoryVM.Photo != null)
+            {
+                category.ImgUrl = categoryVM.Photo.SaveImage(_webHostEnvironment, "images");
+            }
 
             _appDbContext.Categories.Add(category);
             _appDbContext.SaveChanges();    
@@ -50,6 +67,12 @@ namespace BackendFinal.Areas.AdminArea.Controllers
             if (id == null) return View();
             var exist = _appDbContext.Categories.FirstOrDefault(c => c.Id == id);
             if (exist == null) return View();
+            if (exist.ImgUrl != null)
+            {
+                string path = Path.Combine(_webHostEnvironment.WebRootPath, "img", exist.ImgUrl);
+                DeleteHelper.DeleteFile(path);
+            }
+            
             _appDbContext.Categories.Remove(exist);
             _appDbContext.SaveChanges();
             return RedirectToAction("Index");
@@ -62,8 +85,10 @@ namespace BackendFinal.Areas.AdminArea.Controllers
             {
                 Name = exist.Name,
                 ParentId = exist.ParentId,
-                IsMain = exist.IsMain
+                IsMain = exist.IsMain,
+                ImgUrl = exist.ImgUrl
             };
+            
             return View(categoryVM);
 
         }
@@ -75,12 +100,19 @@ namespace BackendFinal.Areas.AdminArea.Controllers
             if(id == null) return View();
             var exist = _appDbContext.Categories.FirstOrDefault(c => c.Id == id);
             if(exist == null) return View();
-
+            if (categoryVM.Photo != null)
+            {
+                string path = Path.Combine(_webHostEnvironment.WebRootPath, "img", exist.ImgUrl);
+                DeleteHelper.DeleteFile(path);
+                exist.ImgUrl = categoryVM.Photo.FileName;
+            }
             exist.Name = categoryVM.Name;
             exist.IsMain = categoryVM.IsMain;
             exist.ParentId = categoryVM.ParentId;
             _appDbContext.SaveChanges();
             return RedirectToAction("Index");
+
+            
         }
     }
 }

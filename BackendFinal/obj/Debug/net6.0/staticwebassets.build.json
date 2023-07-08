@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FQJv1lYHhYyDi+ooUeY4buEjL7VWqAi/5ksQtddGj/g=",
+  "Hash": "7Qv1mb9f/7dF6lhXLzdq/KbyQ/M3zgB06q37GLj2H90=",
   "Source": "BackendFinal",
   "BasePath": "_content/BackendFinal",
   "Mode": "Default",
@@ -3570,6 +3570,23 @@
       "OriginalItemSpec": "wwwroot\\images\\4ceff052-ff9a-47ca-b96d-90562473a506banner-1.png"
     },
     {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\4d2b0617-c696-43a6-a68a-f225d1e959e6product-7.jpg",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/4d2b0617-c696-43a6-a68a-f225d1e959e6product-7.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\4d2b0617-c696-43a6-a68a-f225d1e959e6product-7.jpg"
+    },
+    {
       "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\4d58ebf7-200d-4e0a-8871-ed6d641dc5d8product-8.jpg",
       "SourceId": "BackendFinal",
       "SourceType": "Discovered",
@@ -3774,6 +3791,23 @@
       "OriginalItemSpec": "wwwroot\\images\\6a9be842-a214-44a6-8c28-b90a904925eaproduct-9.jpg"
     },
     {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\6c13e9ea-1928-4b70-b04a-a49da2323540product-8.jpg",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/6c13e9ea-1928-4b70-b04a-a49da2323540product-8.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\6c13e9ea-1928-4b70-b04a-a49da2323540product-8.jpg"
+    },
+    {
       "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\748f95be-b596-49ff-b0f6-27dcf7f11bd5product-2.jpg",
       "SourceId": "BackendFinal",
       "SourceType": "Discovered",
@@ -3808,6 +3842,23 @@
       "OriginalItemSpec": "wwwroot\\images\\77aab4b1-62ea-4cee-838a-c74a54044595product-8.jpg"
     },
     {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\869d4e85-d08b-4757-9f08-69141166c77cproduct-2.jpg",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/869d4e85-d08b-4757-9f08-69141166c77cproduct-2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\869d4e85-d08b-4757-9f08-69141166c77cproduct-2.jpg"
+    },
+    {
       "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\8b8d6721-8ac4-4279-80a8-16fa90413cddproduct-8.jpg",
       "SourceId": "BackendFinal",
       "SourceType": "Discovered",
@@ -3840,6 +3891,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\964d8a21-808e-4140-a7ff-7b9a81739bd7product-7.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\98553017-28b1-412b-a0aa-be0fe93fe6fbcategory-7.jpg",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/98553017-28b1-412b-a0aa-be0fe93fe6fbcategory-7.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\98553017-28b1-412b-a0aa-be0fe93fe6fbcategory-7.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\98abcab5-29e7-4cad-baab-2effc43ca9ccproduct-14.jpg",
@@ -3925,6 +3993,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\a0973196-690d-4763-b6f2-7afe47998dbbproduct-1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\a6bfe915-155c-4dae-90dc-d982f114bdb9product-1.jpg",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/a6bfe915-155c-4dae-90dc-d982f114bdb9product-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\a6bfe915-155c-4dae-90dc-d982f114bdb9product-1.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\author-1.png",
@@ -4044,6 +4129,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\b5d242fe-640d-4d53-8c8b-c8820729fe0dproduct-16.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\b5d8e953-ed7d-4fd4-b647-8e1177cde18acategory-1.jpg",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/b5d8e953-ed7d-4fd4-b647-8e1177cde18acategory-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\b5d8e953-ed7d-4fd4-b647-8e1177cde18acategory-1.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\banner-1.png",
@@ -4658,6 +4760,23 @@
       "OriginalItemSpec": "wwwroot\\images\\c09942fc-ec34-4a5d-9687-f6e44342409dproduct-16.jpg"
     },
     {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\c1ba0f1b-beeb-4f52-914e-9785ba2990eacategory-3.jpg",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/c1ba0f1b-beeb-4f52-914e-9785ba2990eacategory-3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\c1ba0f1b-beeb-4f52-914e-9785ba2990eacategory-3.jpg"
+    },
+    {
       "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\category-1.jpg",
       "SourceId": "BackendFinal",
       "SourceType": "Discovered",
@@ -4896,6 +5015,40 @@
       "OriginalItemSpec": "wwwroot\\images\\custom_banner.jpg"
     },
     {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\d489fc69-d468-4e25-9170-ac4cbdd1cfaeproduct-16.jpg",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/d489fc69-d468-4e25-9170-ac4cbdd1cfaeproduct-16.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\d489fc69-d468-4e25-9170-ac4cbdd1cfaeproduct-16.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\d8b3e3a5-00ae-4aa8-a75e-838854a0598dproduct-7.jpg",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/d8b3e3a5-00ae-4aa8-a75e-838854a0598dproduct-7.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\d8b3e3a5-00ae-4aa8-a75e-838854a0598dproduct-7.jpg"
+    },
+    {
       "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\dedc7c66-84ed-44d4-95cd-ce74bb168327product-1.jpg",
       "SourceId": "BackendFinal",
       "SourceType": "Discovered",
@@ -4945,6 +5098,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\e36bae5d-2339-4e82-97e8-3eb04e6d3a66product-17.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\e5cee298-38e8-42a2-b70b-d35211ad972ccategory-10.jpg",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/e5cee298-38e8-42a2-b70b-d35211ad972ccategory-10.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\e5cee298-38e8-42a2-b70b-d35211ad972ccategory-10.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\eea0503b-751c-44db-9aff-93329a08f61dproduct-6.jpg",
@@ -5098,6 +5268,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\fdb2abbe-bdc7-4dd9-abae-335139d0d033product-17.jpg",
+      "SourceId": "BackendFinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\",
+      "BasePath": "_content/BackendFinal",
+      "RelativePath": "images/fdb2abbe-bdc7-4dd9-abae-335139d0d033product-17.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\fdb2abbe-bdc7-4dd9-abae-335139d0d033product-17.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\source\\repos\\BackendFinal\\BackendFinal\\wwwroot\\images\\flag\\1.jpg",

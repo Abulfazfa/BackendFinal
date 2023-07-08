@@ -22,6 +22,9 @@ namespace BackendFinal.Controllers
             homeVM.Banners = _appDbContext.Banners.ToList();
             homeVM.Bios = _appDbContext.Bios.FirstOrDefault();
             homeVM.Products = _appDbContext.Products.Include(p => p.Images).Include(p => p.Category).ToList();
+            homeVM.Categories = _appDbContext.Categories.Where(c => c.IsMain == true).ToList();
+            homeVM.Blogs = _appDbContext.Blogs.ToList();
+            homeVM.Says = _appDbContext.Says.ToList();
             return View(homeVM);
         }
         public IActionResult Search(string search)

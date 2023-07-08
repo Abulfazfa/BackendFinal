@@ -1,0 +1,58 @@
+﻿@using BackendFinal.ViewModels
+@model HomeVM
+    <!--====== Blog Part Start ======-->
+
+    <section class="blog-area blog-bg pt-100 pb-100">
+        <div class="container">
+            <div class="row blog-active">
+               
+               @foreach (var item in Model.Blogs)
+            {
+                 <div class="col-lg-4">
+                    <div class="single-blog">
+                        <div class="blag-image">
+                            <a href="blog-single-left-sidebar.html"><img src="~/images/@item.ImgUrl" alt="Blog"></a>
+                            <p class="meta-date">
+                                <span class="day">@item.CreatedDate</span>
+                                <span class="month">@item.Date</span>
+                            </p>
+                        </div>
+                        <div class="blag-content">
+                            <h2 class="blog-title"><a href="blog-single-left-sidebar.html">@item.Title</a></h2>
+                            <p>@item.Desc</p>
+                        </div>
+                    </div> <!-- single blog -->
+                </div>
+            }
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== Blog Part Ends ======-->
+    <!--====== Testimonial Part Start ======-->
+
+    <section class="testimonial-area bg_cover pt-100 pb-100" style="background-image: url(images/bg_testimonial.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="testimonial-active">
+                        
+                        @foreach (var item in Model.Says)
+                    {
+                        <div class="single-testimonial d-sm-flex">
+                            <div class="testimonial-author">
+                                <img src="~/images/@item.ImgUrl" alt="author">
+                            </div>
+                            <div class="testimonial-content media-body">
+                                <p> @item.Desc</p>
+                                <h4 class="author-name">@item.Author</h4>
+                                <span class="designation">@item.Position</span>
+                            </div>
+                        </div> <!-- single testimonial -->
+                    }
+                    </div> <!-- testimonial Active -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+

@@ -18,6 +18,8 @@ namespace BackendFinal.DAL
         public DbSet<Bio> Bios { get; set; }
         public DbSet<AboutSection> AboutSections { get; set; }
         public DbSet<UserMessage> UserMessages { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Say> Says { get; set; }
 
     }
 }
