@@ -4,6 +4,7 @@ using BackendFinal.Models;
 using BackendFinal.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.IO;
 
@@ -70,6 +71,10 @@ namespace BackendFinal.Areas.AdminArea.Controllers
             _appDbContext.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+        public IActionResult Detail(int? id)
+        {
+            return View(_appDbContext.Sliders.FirstOrDefault(p => p.Id == id));
         }
         public IActionResult Update(int? id)
         {

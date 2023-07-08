@@ -67,6 +67,10 @@ namespace BackendFinal.Areas.AdminArea.Controllers
 
             return RedirectToAction("Index");
         }
+        public IActionResult Detail(int? id)
+        {
+            return View(_appDbContext.Banners.FirstOrDefault(p => p.Id == id));
+        }
         public IActionResult Update(int? id)
         {
             if (id == null) return NotFound();

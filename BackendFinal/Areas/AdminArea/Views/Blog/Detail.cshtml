@@ -1,0 +1,33 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="form-group">
+                    <img src="~/images/@Model.ImgUrl" width="300" height="200" />
+                </div>
+                <div class="form-group">
+                    <p>@Model.Title</p>
+                </div>
+                <div class="form-group">
+                    <p>@Model.Desc</p>
+                </div>
+                <div class="form-group">
+                    <p>@Model.CreatedDate</p>
+                </div>
+                <div class="form-group">
+                    <p>@Model.Date</p>
+                </div>
+
+                <a class="btn btn-dark" asp-controller="banner" asp-action="index">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
